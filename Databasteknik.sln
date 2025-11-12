@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Databasteknik", "Databasteknik.csproj", "{C562EF5E-E0DE-1788-9B3F-285BBF230185}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C562EF5E-E0DE-1788-9B3F-285BBF230185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C562EF5E-E0DE-1788-9B3F-285BBF230185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C562EF5E-E0DE-1788-9B3F-285BBF230185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C562EF5E-E0DE-1788-9B3F-285BBF230185}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7537740-C2B9-4755-882F-FBAD31EABB9E}
+	EndGlobalSection
+EndGlobal
