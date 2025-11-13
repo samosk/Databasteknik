@@ -30,4 +30,22 @@ public class ProfileModel
 
     // Reference to users
     public virtual required UserModel User { get; set; }
+
+    //Constructor with all attributes as parameters
+    public ProfileModel(
+        int userId,
+        string profileName,
+        string maturityRating,
+        UserModel user,
+        bool kidsProfile = false,
+        string profileLanguage = "en")
+    {
+        UserId = userId;
+        ProfileName = profileName;
+        MaturityRating = maturityRating;
+        User = user;
+        KidsProfile = kidsProfile;
+        ProfileLanguage = profileLanguage;
+        DateOfCreation = DateTime.Today;
+    }
 }

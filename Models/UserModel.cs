@@ -34,8 +34,17 @@ public class UserModel
     [Column("is_active")]
     public bool IsActive { get; set; } = true;
 
-    //Reference to profile
-    public virtual required ProfileModel Profiles { get; set; }
+    //Reference to profile, can contain multiple profiles
+    public virtual ICollection<ProfileModel> Profiles { get; set; }
+
+    //Constructor with some standard values
+    public UserModel()
+    {
+        DateOfCreation = DateTime.Today;
+        SubscriptionTier = "basic";
+        IsActive = true;
+        Profiles = [];
+    }
 }
 
 
