@@ -1,0 +1,26 @@
+[
+  {
+    "UserId": 1,
+    "Email": "john.doe@email.com",
+    "PasswordHash": "hash123abc",
+    "FirstName": "John",
+    "LastName": "Doe",
+    "DateOfBirth": "1985-03-15T00:00:00",
+    "DateOfCreation": "2023-01-10T00:00:00",
+    "SubscriptionTier": "premium",
+    "IsActive": true,
+    "Profiles": []
+  },
+  {
+    "UserId": 2,
+    "Email": "jane.smith@email.com",
+    "PasswordHash": "hash345efg",
+    "FirstName": "Jane",
+    "LastName": "Smith",
+    "DateOfBirth": "1990-07-22T00:00:00",
+    "DateOfCreation": "2023-02-14T00:00:00",
+    "SubscriptionTier": "standard",
+    "IsActive": true,
+    "Profiles": []
+  }
+]
