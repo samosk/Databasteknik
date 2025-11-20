@@ -1,0 +1,95 @@
+@model Databasteknik.Models.UserModel
+
+@{
+    ViewData["Title"] = "View User";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>User Details</h1>
+    </div>
+
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h3>@Model.FirstName @Model.LastName</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>User ID:</strong> @Model.UserId</p>
+                    <p><strong>Email:</strong> @Model.Email</p>
+                    <p><strong>First Name:</strong> @Model.FirstName</p>
+                    <p><strong>Last Name:</strong> @Model.LastName</p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Date of Birth:</strong> @Model.DateOfBirth.ToString("yyyy-MM-dd")</p>
+                    <p><strong>Date of Creation:</strong> @Model.DateOfCreation.ToString("yyyy-MM-dd")</p>
+                    <p><strong>Subscription Tier:</strong> 
+                        <span class="badge bg-@(Model.SubscriptionTier == "premium" ? "warning" : "info")">
+                            @Model.SubscriptionTier
+                        </span>
+                    </p>
+                    <p><strong>Status:</strong> 
+                        @if (Model.IsActive)
+                        {
+                            <span class="badge bg-success">Active</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">Inactive</span>
+                        }
+                    </p>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <a asp-action="" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Back to List
+                    </a>
+                </div>
+                <div>
+                    @* Delete Button with Confirmation *@
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                        <i class="bi bi-trash"></i> Delete User
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert alert-info mt-3" role="alert">
+        <i class="bi bi-info-circle"></i> This user has been saved to your cookies and session as "Last Viewed User"
+    </div>
+</div>
+
+@* Delete Confirmation Modal *@
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this user?</p>
+                <div class="alert alert-warning">
+                    <strong>Warning:</strong> This action cannot be undone!
+                </div>
+                <p><strong>User:</strong> @Model.FirstName @Model.LastName</p>
+                <p><strong>Email:</strong> @Model.Email</p>
+                <p><strong>User ID:</strong> @Model.UserId</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <form asp-action="Delete" asp-route-id="@Model.UserId" method="post" style="display: inline;">
+                    <button type="submit" class="btn btn-danger">
+                        <i class="bi bi-trash"></i> Yes, Delete User
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
