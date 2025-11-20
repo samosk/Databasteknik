@@ -68,9 +68,6 @@ public class UserController : Controller
             ViewBag.LastViewedUser = lastUser?.FirstName + " " + lastUser?.LastName;
         }
         
-        var preferredView = Request.Cookies["PreferredView"] ?? "table";
-        ViewBag.PreferredView = preferredView;
-        
         ViewBag.TotalUsers = userList.Count;
         ViewBag.LastUpdated = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         
