@@ -215,19 +215,6 @@ public class UserController : Controller
         }
     }
     
-    //GET: /User/SetPreference
-    public IActionResult SetPreference(string view)
-    {
-        Response.Cookies.Append("PreferredView", view, new CookieOptions
-        {
-            Expires = DateTimeOffset.Now.AddMonths(6),
-            HttpOnly = true
-        });
-        
-        TempData["SuccessMessage"] = $"Preference saved: {view} view";
-        return RedirectToAction("");
-    }
-    
     //GET: /User/ClearSession
     public IActionResult ClearSession()
     {
